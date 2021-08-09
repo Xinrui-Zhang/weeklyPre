@@ -1,0 +1,185 @@
+<!--
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: xrzhang03
+ * @Date: 2021-08-06 13:19:15
+ * @LastEditors: xrzhang03
+ * @LastEditTime: 2021-08-09 14:13:46
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+						# VScode插件开发 
+						## 信息检索概述
+
+						分享人：张心睿
+					</textarea
+          >
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+						## 先来尝试一下
+						制作你的第一个VScode插件
+					</textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							安装 Yeoman 和 VS Code Extension generator
+							
+							```
+							npm install -g yo generator-code
+							```
+
+							用于根据模板自动生成VScode插件项目
+						</textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							生成一个模板项目
+							
+							```
+							yo code
+
+							# ? What type of extension do you want to create? New Extension (TypeScript)
+							# ? What's the name of your extension? HelloWorld
+							### Press <Enter> to choose default for all options below ###
+
+							# ? What's the identifier of your extension? helloworld
+							# ? What's the description of your extension? LEAVE BLANK
+							# ? Initialize a git repository? Yes
+							# ? Bundle the source code with webpack? No
+							# ? Which package manager to use? npm
+
+							code ./helloworld
+							```
+						</textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							运行
+							
+							在VScode中打开新建项目后按F5运行
+
+							<img src="./img/1.png">
+						</textarea
+            >
+          </section>
+					<section data-markdown>
+						<textarea data-template>
+							试用一下吧
+							
+							打开命令搜索框，输入hello world
+							<img src="./img/2.png">
+							回车
+							<img src="./img/3.png">
+	
+						</textarea
+						>
+					</section>
+        </section>
+				
+			</section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+						让我们来看一下这个插件是怎么实现的
+						
+						目录结构
+						```
+						.
+						├── .vscode
+						│   ├── launch.json     // 插件加载和调试的配置
+						│   └── tasks.json      // 配置TypeScript编译任务
+						├── .gitignore          // 忽略构建输出和node_modules文件
+						├── README.md           // 一个友好的插件文档
+						├── src
+						│   └── extension.ts    // 插件源代码
+						├── package.json        // 插件配置清单
+						├── tsconfig.json       // TypeScript配置
+						```
+					</textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							package.json
+							
+							<img height="480" src="./img/4.png">
+						</textarea
+            >
+          </section>
+					<section data-markdown>
+            <textarea data-template>
+							extension.ts
+							
+							<img height="480" src="./img/5.png">
+						</textarea
+            >
+          </section>
+        </section>
+				<section>
+          <section data-markdown>
+            <textarea data-template>
+						VScode 插件类型指南
+					</textarea
+            >
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+							<img height="700" src="./img/VScode插件.png">
+						</textarea
+            >
+          </section>
+					<section data-markdown>
+            <textarea data-template>
+							extension.ts
+							
+							<img height="480" src="./img/5.png">
+						</textarea
+            >
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
