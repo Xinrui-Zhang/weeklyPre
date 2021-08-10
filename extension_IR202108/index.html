@@ -4,7 +4,7 @@
  * @Autor: xrzhang03
  * @Date: 2021-08-06 13:19:15
  * @LastEditors: xrzhang03
- * @LastEditTime: 2021-08-09 17:44:00
+ * @LastEditTime: 2021-08-10 17:54:44
 -->
 <!DOCTYPE html>
 <html>
@@ -94,6 +94,7 @@
 							
 							打开命令搜索框，输入hello world
 							<img src="./img/2.png">
+              
 							回车
 							<img src="./img/3.png">
 	
@@ -186,8 +187,106 @@
             <textarea data-template>
               1. 数据采集
               2. 建立倒排索引
-              3. 模型实现
-              4. 模型评估
+              3. 计算相关度
+              4. 排序
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## 数据采集
+              1. 爬虫/人工收集数据
+              2. 数据清洗(如去除空数据、脏数据等)
+              3. 构建停词表、叙词表
+              
+              <a href="https://github.com/goto456/stopwords">中文常用停词表</a>
+              叙词表——同义词表
+
+              <img height="320" src="./img/8.jpeg">
+            </textarea>
+          </section> 
+          <section data-markdown>
+            <textarea data-template>
+              ## 建立倒排索引
+
+              <img height="480" src="./img/9.png">
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              更高效地搜索term——FST
+
+              <img height="480" src="./img/10.png">
+
+              <a href=“https://www.shenyanchao.cn/blog/2018/12/04/lucene-fst/”>拓展阅读</a>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              优化postings list空间占用
+
+              <img height="400" src="./img/12.jpeg">&nbsp;<img height="400" src="./img/13.jpeg">
+
+              <a href="https://www.elastic.co/cn/blog/frame-of-reference-and-roaring-bitmaps">拓展阅读</a>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              Term index & term & postings list
+
+              <img height="480" src="./img/11.png">
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              计算相关度
+              * 
+              \begin{aligned}
+              词频：tf_{t \in d} = \sqrt{frequency}
+              \end{aligned}
+              * 
+              \begin{aligned}
+              逆向文档频率：idf_{t} = 1 + log(\frac{numDocs}{docFreq + 1})
+              \end{aligned} 
+              * 
+              \begin{aligned}
+              字段长度归一值：norm_{d} = \frac{1}{\sqrt{numTerms}}
+              \end{aligned} 
+              
+              <small>frequency：词在文档中出现的次数 numDocs：索引中文档数量 
+              <br/>docFreq：包含该词的文档数 numTerms：字段词数</small>
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              \begin{aligned}
+              score_{q,d} = coord_{(q,d)} * \sum_{t \in q}{tf_{t \in d} *  {idf_t}^2 * getBoost() * {norm_{(t,d)}}}
+              \end{aligned} 
+
+              coord：文档中包含查询词数/查询词总数
+
+              getBoost()：设定参数
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ## 排序
+
+              前k个最符合查询条件的文档
+
+              最大堆/最小堆实现
+
+              对于大多数查询，前20条即可满足用户需要
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+              ## Code Search插件
+
+              elastic search + kibana
+
+              结合VScode插件开发方式
             </textarea>
           </section>
         </section>
@@ -195,6 +294,7 @@
     </div>
 
     <script src="dist/reveal.js"></script>
+    <script src="plugin/math/math.js"></script>
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
@@ -206,7 +306,13 @@
         hash: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes,RevealMath],
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          // pass other options into `MathJax.Hub.Config()`
+          TeX: { Macros: { RR: "{\\bf R}" } }
+        },
       });
     </script>
   </body>
