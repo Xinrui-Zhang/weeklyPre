@@ -4,7 +4,7 @@
  * @Autor: xrzhang03
  * @Date: 2021-08-06 13:19:15
  * @LastEditors: xrzhang03
- * @LastEditTime: 2021-08-11 17:00:27
+ * @LastEditTime: 2021-08-13 17:06:39
 -->
 <!DOCTYPE html>
 <html>
@@ -167,7 +167,7 @@
         </section>
         <section>
           <section data-markdown>
-            ## VScode插件系统
+            ## VScode命令系统
           </section>
           <section data-markdown>
             <textarea data-template>
@@ -262,12 +262,12 @@
           <section data-markdown>
             <textarea data-template>
               \begin{aligned}
-              score_{q,d} = coord_{(q,d)} * \sum_{t \in q}{tf_{t \in d} *  {idf_t}^2 * getBoost() * {norm_{(t,d)}}}
+              score_{q,d} = coord_{(q,d)} * \sum_{t \in q}{tf_{t \in d} *  {idf_t}^2 * Boost * {norm_{(t,d)}}}
               \end{aligned} 
 
               coord：文档中包含查询词数/查询词总数
 
-              getBoost()：设定参数
+              Boost：设定参数
             </textarea>
           </section>
           <section data-markdown>
