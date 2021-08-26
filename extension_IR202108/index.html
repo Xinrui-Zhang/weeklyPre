@@ -4,7 +4,7 @@
  * @Autor: xrzhang03
  * @Date: 2021-08-06 13:19:15
  * @LastEditors: xrzhang03
- * @LastEditTime: 2021-08-18 16:46:25
+ * @LastEditTime: 2021-08-26 16:02:20
 -->
 <!DOCTYPE html>
 <html>
@@ -36,6 +36,41 @@
           >
         </section>
         <section>
+          <section data-markdown>
+            <textarea data-template>
+              <img height="600" src="./demo.gif" />
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+             ## 技术路线
+
+             1. typescript——用于 vscode 插件的开发
+
+             - [ms 官方文档](https://code.visualstudio.com/api)
+             - [ms 官方提供插件开发示例](https://github.com/Microsoft/vscode-extension-samples)
+             - [typescript 使用手册](https://www.typescriptlang.org/docs/)
+             - [typescript 类型体操](https://github.com/type-challenges/type-challenges)
+             
+
+             2. elastic search——用于检索功能的实现
+
+             - [elastic search 官方文档](https://www.elastic.co/guide/index.html)
+             
+             3. electron——用于数据导入桌面程序的实现
+
+             - [electron 官方文档](https://www.electronjs.org/docs/latest/)
+
+            </textarea>
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+						## VScode插件开发
+					</textarea
+            >
+          </section>
           <section data-markdown>
             <textarea data-template>
 						## 先来尝试一下
@@ -87,8 +122,8 @@
 						</textarea
             >
           </section>
-					<section data-markdown>
-						<textarea data-template>
+          <section data-markdown>
+            <textarea data-template>
 							试用一下吧
 							
 							打开命令搜索框，输入hello world
@@ -98,12 +133,8 @@
 							<img src="./img/3.png">
 	
 						</textarea
-						>
-					</section>
-        </section>
-				
-			</section>
-        <section>
+            >
+          </section>
           <section data-markdown>
             <textarea data-template>
             让我们来看一下这个插件是怎么实现的
@@ -132,7 +163,7 @@
 						</textarea
             >
           </section>
-					<section data-markdown>
+          <section data-markdown>
             <textarea data-template>
 							extension.ts
 							
@@ -140,8 +171,6 @@
 						</textarea
             >
           </section>
-        </section>
-				<section>
           <section data-markdown>
             <textarea data-template>
               ## VScode 插件功能
@@ -154,7 +183,7 @@
 						</textarea
             >
           </section>
-					<section data-markdown style="background-color: white;">
+          <section data-markdown style="background-color: white">
             <textarea data-template>
 							<img height="550" src="./img/6.png">
               
@@ -163,11 +192,7 @@
 						</textarea
             >
           </section>
-        </section>
-        <section>
-          <section data-markdown>
-            ## VScode命令系统
-          </section>
+          <section data-markdown>## VScode命令系统</section>
           <section data-markdown>
             <textarea data-template>
               <img height="700" src="./img/7.jpeg">
@@ -205,7 +230,7 @@
 
               <img height="320" src="./img/8.jpeg">
             </textarea>
-          </section> 
+          </section>
           <section data-markdown>
             <textarea data-template>
               ## 建立倒排索引
@@ -290,13 +315,11 @@
         <section>
           <section data-markdown>
             <textarea data-template>
-              ## Code Search插件
+            ## Q & A
 
-              elastic search + kibana
-
-              结合VScode插件开发方式
-              <img height="400" src="./demo.gif">&nbsp;<img height="400" src="./img/13.jpeg">
-            </textarea>
+            ###   感谢倾听
+          </textarea
+            >
           </section>
         </section>
       </div>
@@ -315,12 +338,12 @@
         hash: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes,RevealMath],
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
+          mathjax: "https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js",
+          config: "TeX-AMS_HTML-full",
           // pass other options into `MathJax.Hub.Config()`
-          TeX: { Macros: { RR: "{\\bf R}" } }
+          TeX: { Macros: { RR: "{\\bf R}" } },
         },
       });
     </script>
