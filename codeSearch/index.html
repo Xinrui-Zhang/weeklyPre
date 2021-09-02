@@ -4,7 +4,7 @@
  * @Autor: xrzhang03
  * @Date: 2021-08-06 13:19:15
  * @LastEditors: xrzhang03
- * @LastEditTime: 2021-09-02 11:18:34
+ * @LastEditTime: 2021-09-02 14:26:35
 -->
 <!DOCTYPE html>
 <html>
@@ -67,15 +67,15 @@
             <textarea data-template>
              ## 特色与创新点
 
-             <small>1. 相较传统搜索引擎，本插件采用数据来源于定制化代码数据，更适合特殊场景的搜索。
+             1. <small>相较传统搜索引擎，本插件采用数据来源于定制化代码数据，更适合特殊场景的搜索。</small>
              
-             2. 本插件在提供检索功能的同时，为管理员提供了数据分析、可视化展示的功能。
+             2. <small>本插件在提供检索功能的同时，为管理员提供了数据分析、可视化展示的功能。</small>
              
-             3. 相较于VScode自带检索功能，本插件在使用场景与功能上有以下特点：
+             3. <small>相较于VScode自带检索功能，本插件在使用场景与功能上有以下特点：</small>
 
-                1. VScode的检索数据为当前工作区内所有代码，而本插件的数据为经过选择后可以复用或借鉴的本组代码。
+                 * <small>VScode的检索数据为当前工作区内所有代码，而本插件的数据为经过选择后可以复用或借鉴的本组代码。</small>
 
-                2. VScode的检索方式为针对代码的全局匹配，且排序并无检索相关度方面的处理，而本插件利用信息检索相关知识，对于描述注释、代码文件赋予不同的权重，并使用相关度计算公式与topK算法对检索结果进行了排序展示。
+                 * <small>VScode的检索方式为针对代码的全局匹配，且排序并无检索相关度方面的处理，而本插件利用信息检索相关知识，对于描述注释、代码文件赋予不同的权重，并使用相关度计算公式与topK算法对检索结果进行了排序展示。</small>
             </textarea>
           </section>
         </section>
@@ -174,7 +174,7 @@
             <textarea data-template>
 							package.json
 							
-							<img height="480" src="./img/4.png">
+							<img height="580" src="./img/4.png">
 						</textarea
             >
           </section>
@@ -182,7 +182,7 @@
             <textarea data-template>
 							extension.ts
 							
-							<img height="480" src="./img/5.png">
+							<img height="580" src="./img/5.png">
 						</textarea
             >
           </section>
@@ -210,12 +210,12 @@
           <section data-markdown>## VScode命令系统</section>
           <section data-markdown>
             <textarea data-template>
-              <img height="700" src="./img/7.jpeg">
+              <img height="650" src="./img/7.jpeg">
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
-              <img height="500" src="./img/命令系统.jpg">
+              <img width="1200" src="./img/命令系统.jpg">
             </textarea>
           </section>
         </section>
@@ -227,15 +227,16 @@
           </section>
           <section data-markdown>
             <textarea data-template>
+              ### 基本步骤
               1. 数据采集
               2. 建立倒排索引
               3. 计算相关度
-              4. 排序
+              4. topK排序
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
-              ## 数据采集
+              ### 数据采集
               1. 爬虫/人工收集数据
               2. 数据清洗(如去除空数据、脏数据等)
               3. 构建停词表、叙词表
@@ -248,7 +249,7 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-            ### 本插件的数据导入
+            ### 本插件的数据采集
             
             <img height="480" src="./img/dataInput.png">
             </textarea>
@@ -262,7 +263,7 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-              ## 建立倒排索引
+              ### 建立倒排索引
 
               <img height="480" src="./img/9.png">
             </textarea>
@@ -336,7 +337,7 @@
           </section>
           <section data-markdown>
             <textarea data-template>
-              ## 排序——topK问题
+              ### 排序——topK问题
 
               前k个最符合查询条件的文档
 
